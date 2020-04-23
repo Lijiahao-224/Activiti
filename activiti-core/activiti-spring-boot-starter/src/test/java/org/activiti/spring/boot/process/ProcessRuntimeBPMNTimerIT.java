@@ -130,7 +130,7 @@ public class ProcessRuntimeBPMNTimerIT {
     }
 
     @Test
-    public void shouldGetTimerFiredScheduledEventsForProcessWithTimer() throws Exception{
+    public void shouldGetTimerFiredScheduledEventsForProcessWithTimer() {
         //given
         ProcessInstance processInstance = processBaseRuntime.startProcessWithProcessDefinitionKey(PROCESS_INTERMEDIATE_TIMER_EVENT);
 
@@ -178,7 +178,6 @@ public class ProcessRuntimeBPMNTimerIT {
                                           processInstance.getId(),
                                           "timer"
                               )
-
                     );
 
             assertThat(listenerExecuted.getEvents())
@@ -306,7 +305,7 @@ public class ProcessRuntimeBPMNTimerIT {
         });
     }
 
-    public void clear() {
+    private void clear() {
         listenerFired.clear();
         listenerScheduled.clear();
         listenerCancelled.clear();
